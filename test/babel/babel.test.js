@@ -1,11 +1,11 @@
 const transformFileSync = require("@babel/core").transformFileSync;
 const path = require("path");
-const plugin = require("../babel");
+const plugin = require("../../babel");
 
 describe("production transform", () => {
     it("CSSVariable", () => {
       const { code } = transformFileSync(
-        path.join(__dirname, "fixtures/CSSVariable.js"),
+        path.join(__dirname, "../fixtures/CSSVariable.js"),
         {
           plugins: [[plugin]],
           babelrc: false,
@@ -15,7 +15,7 @@ describe("production transform", () => {
     });
     it("createVar", () => {
       const { code } = transformFileSync(
-        path.join(__dirname, "fixtures/createVar.js"),
+        path.join(__dirname, "../fixtures/createVar.js"),
         {
           plugins: [[plugin]],
           babelrc: false,
@@ -25,7 +25,7 @@ describe("production transform", () => {
     });
     it("renamed", () => {
       const { code } = transformFileSync(
-        path.join(__dirname, "fixtures/renamed.js"),
+        path.join(__dirname, "../fixtures/renamed.js"),
         {
           plugins: [[plugin]],
           babelrc: false,
@@ -38,7 +38,7 @@ describe("production transform", () => {
   describe("development transform", () => {
     it("CSSVariable", () => {
       const { code } = transformFileSync(
-        path.join(__dirname, "fixtures/CSSVariable.js"),
+        path.join(__dirname, "../fixtures/CSSVariable.js"),
         {
           plugins: [[plugin]],
           babelrc: false,
@@ -49,7 +49,7 @@ describe("production transform", () => {
     });
     it("createVar", () => {
       const { code } = transformFileSync(
-        path.join(__dirname, "fixtures/createVar.js"),
+        path.join(__dirname, "../fixtures/createVar.js"),
         {
           plugins: [[plugin]],
           babelrc: false,
@@ -60,7 +60,7 @@ describe("production transform", () => {
     });
     it("renamed", () => {
       const { code } = transformFileSync(
-        path.join(__dirname, "fixtures/renamed.js"),
+        path.join(__dirname, "../fixtures/renamed.js"),
         {
           plugins: [[plugin]],
           babelrc: false,
@@ -74,7 +74,7 @@ describe("production transform", () => {
   describe("production transform with displayName", () => {
     it("CSSVariable", () => {
       const { code } = transformFileSync(
-        path.join(__dirname, "fixtures/CSSVariable.js"),
+        path.join(__dirname, "../fixtures/CSSVariable.js"),
         {
           plugins: [[plugin, { displayName: true }]],
           babelrc: false,
@@ -84,7 +84,7 @@ describe("production transform", () => {
     });
     it("createVar", () => {
       const { code } = transformFileSync(
-        path.join(__dirname, "fixtures/createVar.js"),
+        path.join(__dirname, "../fixtures/createVar.js"),
         {
           plugins: [[plugin, { displayName: true }]],
           babelrc: false,
@@ -94,7 +94,7 @@ describe("production transform", () => {
     });
     it("renamed", () => {
       const { code } = transformFileSync(
-        path.join(__dirname, "fixtures/renamed.js"),
+        path.join(__dirname, "../fixtures/renamed.js"),
         {
           plugins: [[plugin, { displayName: true }]],
           babelrc: false,

@@ -1,4 +1,4 @@
-const {createVar} = require("../");
+const {createVar} = require("../../");
 
 describe("createVar", () => {
     it("generates a variable name automatically", () => {

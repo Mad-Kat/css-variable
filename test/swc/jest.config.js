@@ -16,7 +16,7 @@ module.exports = {
                 ),
                 {
                   basePath: __dirname,
-                  displayName: true,
+                  displayName: false,
                 },
               ],
             ],
