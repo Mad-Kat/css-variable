@@ -1,4 +1,4 @@
-import {tests} from "../fixtures/a";
+const {tests } =  require("../fixtures/a");
 
 describe("createVar", () => {
   it.each(tests)("Generates the correct name for variable $test.name", ({test, verify, value}) => {

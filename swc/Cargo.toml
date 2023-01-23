@@ -28,7 +28,7 @@ pathdiff = "0.2.1"
 regex = "1.7.1"
 lazy_static = "1.4.0"
 xxhash-rust = { version = "0.8.6", features = ["xxh32"] }
-base62 = "2.0.2"
+base64 = "0.21.0"
 
 [dev-dependencies]
 swc_ecma_parser = "0.124.2"

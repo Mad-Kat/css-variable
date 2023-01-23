@@ -18,18 +18,18 @@ export const tests= [
 		{
 			name: '--primary',
 			test: primary,
-			verify: '--sd2fqv0',
+			verify: '--lvxXYA0',
 		},
 		{
 			name: '--secondary',
 			test: secondary,
-			verify: "--sd2fqv1",
+			verify: "--lvxXYA1",
 			value: '#fff',
 		},
 		{
 			name: '--theme--colors--primary',
 			test: theme.colors.primary,
-			verify: "--sd2fqv2"
+			verify: "--lvxXYA2"
 		},
 		...generated.map(g => ({
 			name: g.name,

@@ -4,6 +4,7 @@ module.exports = {
   env: {
     test: {
       presets: [["@babel/preset-env", { targets: { node: "current" } }]],
+      include: ["test/fixtures/**"],
     plugins: [
             [
             require.resolve(

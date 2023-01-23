@@ -39,7 +39,7 @@ module.exports = function (babel) {
     if (!("name" in callee) || !pluginPass.localVarNames.includes(callee.name)) {
       return;
     }
-    const readableName = !pluginPass.minifyVariables && dashed(getNameByUsage(path));
+    const readableName = !pluginPass.minifyVariables && dashed(getNameByUsage(path) ?? "");
     const readablePrefix = readableName ? `${readableName}--` : "";
     //
     // Inject the variable prefix

@@ -2,17 +2,17 @@
 
 exports[`development transform CSSVariable 1`] = `
 "import { CSSVariable } from "css-variable";
-const primary = /*@__PURE__*/new CSSVariable("primary--mobtag0");
-const secondary = /*@__PURE__*/new CSSVariable("secondary--mobtag1", {
+const primary = /*@__PURE__*/new CSSVariable("primary--GC_OuQ0");
+const secondary = /*@__PURE__*/new CSSVariable("secondary--GC_OuQ1", {
   value: '#fff'
 });
 const theme = {
   colors: {
-    primary: /*@__PURE__*/new CSSVariable("primary--mobtag2")
+    primary: /*@__PURE__*/new CSSVariable("primary--GC_OuQ2")
   }
 };
-const generated = allColors.map(color => /*@__PURE__*/new CSSVariable("mobtag3", color));
-const generatedWithFallback = allColors.map(color => /*@__PURE__*/new CSSVariable("mobtag4", color, {
+const generated = allColors.map(color => /*@__PURE__*/new CSSVariable("GC_OuQ3", color));
+const generatedWithFallback = allColors.map(color => /*@__PURE__*/new CSSVariable("GC_OuQ4", color, {
   value: '#000'
 }));"
 `;
@@ -21,25 +21,25 @@ exports[`development transform createVar 1`] = `"import { createVar } from "css-
 
 exports[`development transform renamed 1`] = `
 "import { CSSVariable as CSSVar, createVar as createVariable } from "css-variable";
-const primary = /*@__PURE__*/new CSSVar("primary--1ynmbls0");
-const secondary = /*@__PURE__*/createVariable("secondary--1ynmbls1");"
+const primary = /*@__PURE__*/new CSSVar("primary--n8-W8g0");
+const secondary = /*@__PURE__*/createVariable("secondary--n8-W8g1");"
 `;
 
 exports[`production transform CSSVariable 1`] = `
 ""use strict";
 
 var _cssVariable = require("css-variable");
-const primary = /*@__PURE__*/new _cssVariable.CSSVariable("mobtag0");
-const secondary = /*@__PURE__*/new _cssVariable.CSSVariable("mobtag1", {
+const primary = /*@__PURE__*/new _cssVariable.CSSVariable("GC_OuQ0");
+const secondary = /*@__PURE__*/new _cssVariable.CSSVariable("GC_OuQ1", {
   value: '#fff'
 });
 const theme = {
   colors: {
-    primary: /*@__PURE__*/new _cssVariable.CSSVariable("mobtag2")
+    primary: /*@__PURE__*/new _cssVariable.CSSVariable("GC_OuQ2")
   }
 };
-const generated = allColors.map(color => /*@__PURE__*/new _cssVariable.CSSVariable("mobtag3", color));
-const generatedWithFallback = allColors.map(color => /*@__PURE__*/new _cssVariable.CSSVariable("mobtag4", color, {
+const generated = allColors.map(color => /*@__PURE__*/new _cssVariable.CSSVariable("GC_OuQ3", color));
+const generatedWithFallback = allColors.map(color => /*@__PURE__*/new _cssVariable.CSSVariable("GC_OuQ4", color, {
   value: '#000'
 }));"
 `;
@@ -54,25 +54,25 @@ exports[`production transform renamed 1`] = `
 ""use strict";
 
 var _cssVariable = require("css-variable");
-const primary = /*@__PURE__*/new _cssVariable.CSSVariable("1ynmbls0");
-const secondary = /*@__PURE__*/(0, _cssVariable.createVar)("1ynmbls1");"
+const primary = /*@__PURE__*/new _cssVariable.CSSVariable("n8-W8g0");
+const secondary = /*@__PURE__*/(0, _cssVariable.createVar)("n8-W8g1");"
 `;
 
 exports[`production transform with displayName CSSVariable 1`] = `
 ""use strict";
 
 var _cssVariable = require("css-variable");
-const primary = /*@__PURE__*/new _cssVariable.CSSVariable("primary--mobtag0");
-const secondary = /*@__PURE__*/new _cssVariable.CSSVariable("secondary--mobtag1", {
+const primary = /*@__PURE__*/new _cssVariable.CSSVariable("primary--GC_OuQ0");
+const secondary = /*@__PURE__*/new _cssVariable.CSSVariable("secondary--GC_OuQ1", {
   value: '#fff'
 });
 const theme = {
   colors: {
-    primary: /*@__PURE__*/new _cssVariable.CSSVariable("primary--mobtag2")
+    primary: /*@__PURE__*/new _cssVariable.CSSVariable("primary--GC_OuQ2")
   }
 };
-const generated = allColors.map(color => /*@__PURE__*/new _cssVariable.CSSVariable("mobtag3", color));
-const generatedWithFallback = allColors.map(color => /*@__PURE__*/new _cssVariable.CSSVariable("mobtag4", color, {
+const generated = allColors.map(color => /*@__PURE__*/new _cssVariable.CSSVariable("GC_OuQ3", color));
+const generatedWithFallback = allColors.map(color => /*@__PURE__*/new _cssVariable.CSSVariable("GC_OuQ4", color, {
   value: '#000'
 }));"
 `;
@@ -87,6 +87,6 @@ exports[`production transform with displayName renamed 1`] = `
 ""use strict";
 
 var _cssVariable = require("css-variable");
-const primary = /*@__PURE__*/new _cssVariable.CSSVariable("primary--1ynmbls0");
-const secondary = /*@__PURE__*/(0, _cssVariable.createVar)("secondary--1ynmbls1");"
+const primary = /*@__PURE__*/new _cssVariable.CSSVariable("primary--n8-W8g0");
+const secondary = /*@__PURE__*/(0, _cssVariable.createVar)("secondary--n8-W8g1");"
 `;
