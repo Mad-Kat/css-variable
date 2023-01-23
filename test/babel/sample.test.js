@@ -1,12 +1,13 @@
-const {tests } =  require("../fixtures/a");
+const {fileHashBase64, vars } =  require("../fixtures/CSSVariable");
 
 describe("createVar", () => {
-  it.each(tests)("Generates the correct name for variable $test.name", ({test, verify, value}) => {
-    expect(test.name).toEqual(verify);
-		if(!value){
-    	expect(test.val).toEqual(`var(${verify})`);
-		} else {
-			expect(test.val).toEqual(`var(${verify}, ${value})`);
+  it.each(vars)("Generates the correct string representation with $value", ({value, withoutName, withName}) => {
+		if(process.env['BABEL_ENV']==="test-with-displayName"){
+    	expect(value).toBe(withName);
+		}
+
+		if(process.env['BABEL_ENV']==="test-without-displayName"){
+    	expect(value).toBe(withoutName);
 		}
   });
 });
