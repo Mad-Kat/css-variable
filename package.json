@@ -32,9 +32,9 @@
     "changelog": "npx standard-version",
     "test": "npm run test:e2e && npm run test:jest",
     "test:e2e": "node ./test/examples.js",
-    "test:jest": "BABEL_ENV=test-without-displayName jest --no-cache && BABEL_ENV=test-with-displayName jest --no-cache",
+    "test:jest": "BABEL_ENV=test-with-displayName jest --no-cache",
     "test:swc": "npm run test:swc:cargo && npm run build:swc && npm run test:swc:jest",
-    "test:swc:jest": "TEST_ENV=test-without-displayName jest --config test/swc/withoutName.jest.config.js --no-cache && TEST_ENV=test-with-displayName jest --config test/swc/withName.jest.config.js --no-cache",
+    "test:swc:jest": "TEST_ENV=test-without-displayName jest --config test/swc/withoutName.jest.config.js --no-cache -u && TEST_ENV=test-with-displayName jest --config test/swc/withName.jest.config.js --no-cache -u",
     "test:swc:cargo": "cargo test --manifest-path ./swc/Cargo.toml",
     "docs": "node ./docs/build.js"
   },

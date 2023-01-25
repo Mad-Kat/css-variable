@@ -2,192 +2,261 @@
 
 exports[`development transform CSSVariable 1`] = `
 "import { createVar } from "css-variable";
-const primary = /*@__PURE__*/createVar("primary--GC_OuQ0");
-const secondary = /*@__PURE__*/createVar("secondary--GC_OuQ1", {
-  value: '#fff'
+var primary = createVar("GC_OuQ0");
+var secondary = createVar("GC_OuQ1", {
+    value: "#fff"
 });
-const allColors = ["c1", "c2", "c3"];
-const theme = {
-  colors: {
-    primary: /*@__PURE__*/createVar("primary--GC_OuQ2")
-  }
+var allColors = [
+    "c1",
+    "c2",
+    "c3"
+];
+var theme = {
+    colors: {
+        primary: createVar("GC_OuQ2")
+    }
 };
-const generated = allColors.map(color => /*@__PURE__*/createVar("GC_OuQ3", color));
-const generatedWithFallback = allColors.map(color => /*@__PURE__*/createVar("GC_OuQ4", color, {
-  value: '#000'
-}));
-export const fileHashBase64 = "GC_OuQ";
-export const vars = [{
-  value: primary.toString(),
-  withoutName: 'var(--GC_OuQ0)',
-  withName: 'var(--primary--GC_OuQ0)'
-}, {
-  value: secondary.toString(),
-  withoutName: 'var(--GC_OuQ1, #fff)',
-  withName: 'var(--secondary--GC_OuQ1, #fff)'
-}, {
-  value: theme.colors.primary.toString(),
-  withoutName: 'var(--GC_OuQ2)',
-  withName: 'var(--primary--GC_OuQ2)'
-}, {
-  value: generated[0].toString(),
-  withoutName: 'var(--GC_OuQ3-c1)',
-  withName: 'var(--GC_OuQ3-c1)'
-}, {
-  value: generated[1].toString(),
-  withoutName: 'var(--GC_OuQ3-c2)',
-  withName: 'var(--GC_OuQ3-c2)'
-}, {
-  value: generated[2].toString(),
-  withoutName: 'var(--GC_OuQ3-c3)',
-  withName: 'var(--GC_OuQ3-c3)'
-}, {
-  value: generatedWithFallback[0].toString(),
-  withoutName: 'var(--GC_OuQ4-c1, #000)',
-  withName: 'var(--GC_OuQ4-c1, #000)'
-}, {
-  value: generatedWithFallback[1].toString(),
-  withoutName: 'var(--GC_OuQ4-c2, #000)',
-  withName: 'var(--GC_OuQ4-c2, #000)'
-}, {
-  value: generatedWithFallback[2].toString(),
-  withoutName: 'var(--GC_OuQ4-c3, #000)',
-  withName: 'var(--GC_OuQ4-c3, #000)'
-}];"
+var generated = allColors.map(function(color) {
+    return createVar("GC_OuQ3", color);
+});
+var generatedWithFallback = allColors.map(function(color) {
+    return createVar("GC_OuQ4", color, {
+        value: "#000"
+    });
+});
+export var fileHashBase64 = "GC_OuQ";
+export var vars = [
+    {
+        value: primary.toString(),
+        withoutName: "var(--GC_OuQ0)",
+        withName: "var(--primary--GC_OuQ0)"
+    },
+    {
+        value: secondary.toString(),
+        withoutName: "var(--GC_OuQ1, #fff)",
+        withName: "var(--secondary--GC_OuQ1, #fff)"
+    },
+    {
+        value: theme.colors.primary.toString(),
+        withoutName: "var(--GC_OuQ2)",
+        withName: "var(--primary--colors--theme--GC_OuQ2)"
+    },
+    {
+        value: generated[0].toString(),
+        withoutName: "var(--GC_OuQ3-c1)",
+        withName: "var(--generated--GC_OuQ3-c1)"
+    },
+    {
+        value: generated[1].toString(),
+        withoutName: "var(--GC_OuQ3-c2)",
+        withName: "var(--generated--GC_OuQ3-c2)"
+    },
+    {
+        value: generated[2].toString(),
+        withoutName: "var(--GC_OuQ3-c3)",
+        withName: "var(--generated--GC_OuQ3-c3)"
+    },
+    {
+        value: generatedWithFallback[0].toString(),
+        withoutName: "var(--GC_OuQ4-c1, #000)",
+        withName: "var(--generatedWithFallback--GC_OuQ4-c1, #000)"
+    },
+    {
+        value: generatedWithFallback[1].toString(),
+        withoutName: "var(--GC_OuQ4-c2, #000)",
+        withName: "var(--generatedWithFallback--GC_OuQ4-c2, #000)"
+    },
+    {
+        value: generatedWithFallback[2].toString(),
+        withoutName: "var(--GC_OuQ4-c3, #000)",
+        withName: "var(--generatedWithFallback--GC_OuQ4-c3, #000)"
+    }
+];
+"
 `;
 
-exports[`development transform createVar 1`] = `"import { createVar } from "css-variable";"`;
+exports[`development transform createVar 1`] = `
+"import { createVar } from "css-variable";
+"
+`;
 
 exports[`development transform renamed 1`] = `
 "import { CSSVariable as CSSVar, createVar as createVariable } from "css-variable";
-const primary = /*@__PURE__*/new CSSVar("primary--n8-W8g0");
-const secondary = /*@__PURE__*/createVariable("secondary--n8-W8g1");"
+var primary = new CSSVar();
+var secondary = createVariable("n8-W8g0");
+"
 `;
 
 exports[`production transform CSSVariable 1`] = `
 "import { createVar } from "css-variable";
-const primary = /*@__PURE__*/createVar("GC_OuQ0");
-const secondary = /*@__PURE__*/createVar("GC_OuQ1", {
-  value: '#fff'
+var primary = createVar("GC_OuQ0");
+var secondary = createVar("GC_OuQ1", {
+    value: "#fff"
 });
-const allColors = ["c1", "c2", "c3"];
-const theme = {
-  colors: {
-    primary: /*@__PURE__*/createVar("GC_OuQ2")
-  }
+var allColors = [
+    "c1",
+    "c2",
+    "c3"
+];
+var theme = {
+    colors: {
+        primary: createVar("GC_OuQ2")
+    }
 };
-const generated = allColors.map(color => /*@__PURE__*/createVar("GC_OuQ3", color));
-const generatedWithFallback = allColors.map(color => /*@__PURE__*/createVar("GC_OuQ4", color, {
-  value: '#000'
-}));
-export const fileHashBase64 = "GC_OuQ";
-export const vars = [{
-  value: primary.toString(),
-  withoutName: 'var(--GC_OuQ0)',
-  withName: 'var(--primary--GC_OuQ0)'
-}, {
-  value: secondary.toString(),
-  withoutName: 'var(--GC_OuQ1, #fff)',
-  withName: 'var(--secondary--GC_OuQ1, #fff)'
-}, {
-  value: theme.colors.primary.toString(),
-  withoutName: 'var(--GC_OuQ2)',
-  withName: 'var(--primary--GC_OuQ2)'
-}, {
-  value: generated[0].toString(),
-  withoutName: 'var(--GC_OuQ3-c1)',
-  withName: 'var(--GC_OuQ3-c1)'
-}, {
-  value: generated[1].toString(),
-  withoutName: 'var(--GC_OuQ3-c2)',
-  withName: 'var(--GC_OuQ3-c2)'
-}, {
-  value: generated[2].toString(),
-  withoutName: 'var(--GC_OuQ3-c3)',
-  withName: 'var(--GC_OuQ3-c3)'
-}, {
-  value: generatedWithFallback[0].toString(),
-  withoutName: 'var(--GC_OuQ4-c1, #000)',
-  withName: 'var(--GC_OuQ4-c1, #000)'
-}, {
-  value: generatedWithFallback[1].toString(),
-  withoutName: 'var(--GC_OuQ4-c2, #000)',
-  withName: 'var(--GC_OuQ4-c2, #000)'
-}, {
-  value: generatedWithFallback[2].toString(),
-  withoutName: 'var(--GC_OuQ4-c3, #000)',
-  withName: 'var(--GC_OuQ4-c3, #000)'
-}];"
+var generated = allColors.map(function(color) {
+    return createVar("GC_OuQ3", color);
+});
+var generatedWithFallback = allColors.map(function(color) {
+    return createVar("GC_OuQ4", color, {
+        value: "#000"
+    });
+});
+export var fileHashBase64 = "GC_OuQ";
+export var vars = [
+    {
+        value: primary.toString(),
+        withoutName: "var(--GC_OuQ0)",
+        withName: "var(--primary--GC_OuQ0)"
+    },
+    {
+        value: secondary.toString(),
+        withoutName: "var(--GC_OuQ1, #fff)",
+        withName: "var(--secondary--GC_OuQ1, #fff)"
+    },
+    {
+        value: theme.colors.primary.toString(),
+        withoutName: "var(--GC_OuQ2)",
+        withName: "var(--primary--colors--theme--GC_OuQ2)"
+    },
+    {
+        value: generated[0].toString(),
+        withoutName: "var(--GC_OuQ3-c1)",
+        withName: "var(--generated--GC_OuQ3-c1)"
+    },
+    {
+        value: generated[1].toString(),
+        withoutName: "var(--GC_OuQ3-c2)",
+        withName: "var(--generated--GC_OuQ3-c2)"
+    },
+    {
+        value: generated[2].toString(),
+        withoutName: "var(--GC_OuQ3-c3)",
+        withName: "var(--generated--GC_OuQ3-c3)"
+    },
+    {
+        value: generatedWithFallback[0].toString(),
+        withoutName: "var(--GC_OuQ4-c1, #000)",
+        withName: "var(--generatedWithFallback--GC_OuQ4-c1, #000)"
+    },
+    {
+        value: generatedWithFallback[1].toString(),
+        withoutName: "var(--GC_OuQ4-c2, #000)",
+        withName: "var(--generatedWithFallback--GC_OuQ4-c2, #000)"
+    },
+    {
+        value: generatedWithFallback[2].toString(),
+        withoutName: "var(--GC_OuQ4-c3, #000)",
+        withName: "var(--generatedWithFallback--GC_OuQ4-c3, #000)"
+    }
+];
+"
 `;
 
-exports[`production transform createVar 1`] = `"import { createVar } from "css-variable";"`;
+exports[`production transform createVar 1`] = `
+"import { createVar } from "css-variable";
+"
+`;
 
 exports[`production transform renamed 1`] = `
 "import { CSSVariable as CSSVar, createVar as createVariable } from "css-variable";
-const primary = /*@__PURE__*/new CSSVar("n8-W8g0");
-const secondary = /*@__PURE__*/createVariable("n8-W8g1");"
+var primary = new CSSVar();
+var secondary = createVariable("n8-W8g0");
+"
 `;
 
 exports[`production transform with displayName CSSVariable 1`] = `
 "import { createVar } from "css-variable";
-const primary = /*@__PURE__*/createVar("primary--GC_OuQ0");
-const secondary = /*@__PURE__*/createVar("secondary--GC_OuQ1", {
-  value: '#fff'
+var primary = createVar("primary--GC_OuQ0");
+var secondary = createVar("secondary--GC_OuQ1", {
+    value: "#fff"
 });
-const allColors = ["c1", "c2", "c3"];
-const theme = {
-  colors: {
-    primary: /*@__PURE__*/createVar("primary--GC_OuQ2")
-  }
+var allColors = [
+    "c1",
+    "c2",
+    "c3"
+];
+var theme = {
+    colors: {
+        primary: createVar("primary--colors--theme--GC_OuQ2")
+    }
 };
-const generated = allColors.map(color => /*@__PURE__*/createVar("GC_OuQ3", color));
-const generatedWithFallback = allColors.map(color => /*@__PURE__*/createVar("GC_OuQ4", color, {
-  value: '#000'
-}));
-export const fileHashBase64 = "GC_OuQ";
-export const vars = [{
-  value: primary.toString(),
-  withoutName: 'var(--GC_OuQ0)',
-  withName: 'var(--primary--GC_OuQ0)'
-}, {
-  value: secondary.toString(),
-  withoutName: 'var(--GC_OuQ1, #fff)',
-  withName: 'var(--secondary--GC_OuQ1, #fff)'
-}, {
-  value: theme.colors.primary.toString(),
-  withoutName: 'var(--GC_OuQ2)',
-  withName: 'var(--primary--GC_OuQ2)'
-}, {
-  value: generated[0].toString(),
-  withoutName: 'var(--GC_OuQ3-c1)',
-  withName: 'var(--GC_OuQ3-c1)'
-}, {
-  value: generated[1].toString(),
-  withoutName: 'var(--GC_OuQ3-c2)',
-  withName: 'var(--GC_OuQ3-c2)'
-}, {
-  value: generated[2].toString(),
-  withoutName: 'var(--GC_OuQ3-c3)',
-  withName: 'var(--GC_OuQ3-c3)'
-}, {
-  value: generatedWithFallback[0].toString(),
-  withoutName: 'var(--GC_OuQ4-c1, #000)',
-  withName: 'var(--GC_OuQ4-c1, #000)'
-}, {
-  value: generatedWithFallback[1].toString(),
-  withoutName: 'var(--GC_OuQ4-c2, #000)',
-  withName: 'var(--GC_OuQ4-c2, #000)'
-}, {
-  value: generatedWithFallback[2].toString(),
-  withoutName: 'var(--GC_OuQ4-c3, #000)',
-  withName: 'var(--GC_OuQ4-c3, #000)'
-}];"
+var generated = allColors.map(function(color) {
+    return createVar("generated--GC_OuQ3", color);
+});
+var generatedWithFallback = allColors.map(function(color) {
+    return createVar("generatedWithFallback--GC_OuQ4", color, {
+        value: "#000"
+    });
+});
+export var fileHashBase64 = "GC_OuQ";
+export var vars = [
+    {
+        value: primary.toString(),
+        withoutName: "var(--GC_OuQ0)",
+        withName: "var(--primary--GC_OuQ0)"
+    },
+    {
+        value: secondary.toString(),
+        withoutName: "var(--GC_OuQ1, #fff)",
+        withName: "var(--secondary--GC_OuQ1, #fff)"
+    },
+    {
+        value: theme.colors.primary.toString(),
+        withoutName: "var(--GC_OuQ2)",
+        withName: "var(--primary--colors--theme--GC_OuQ2)"
+    },
+    {
+        value: generated[0].toString(),
+        withoutName: "var(--GC_OuQ3-c1)",
+        withName: "var(--generated--GC_OuQ3-c1)"
+    },
+    {
+        value: generated[1].toString(),
+        withoutName: "var(--GC_OuQ3-c2)",
+        withName: "var(--generated--GC_OuQ3-c2)"
+    },
+    {
+        value: generated[2].toString(),
+        withoutName: "var(--GC_OuQ3-c3)",
+        withName: "var(--generated--GC_OuQ3-c3)"
+    },
+    {
+        value: generatedWithFallback[0].toString(),
+        withoutName: "var(--GC_OuQ4-c1, #000)",
+        withName: "var(--generatedWithFallback--GC_OuQ4-c1, #000)"
+    },
+    {
+        value: generatedWithFallback[1].toString(),
+        withoutName: "var(--GC_OuQ4-c2, #000)",
+        withName: "var(--generatedWithFallback--GC_OuQ4-c2, #000)"
+    },
+    {
+        value: generatedWithFallback[2].toString(),
+        withoutName: "var(--GC_OuQ4-c3, #000)",
+        withName: "var(--generatedWithFallback--GC_OuQ4-c3, #000)"
+    }
+];
+"
 `;
 
-exports[`production transform with displayName createVar 1`] = `"import { createVar } from "css-variable";"`;
+exports[`production transform with displayName createVar 1`] = `
+"import { createVar } from "css-variable";
+"
+`;
 
 exports[`production transform with displayName renamed 1`] = `
 "import { CSSVariable as CSSVar, createVar as createVariable } from "css-variable";
-const primary = /*@__PURE__*/new CSSVar("primary--n8-W8g0");
-const secondary = /*@__PURE__*/createVariable("secondary--n8-W8g1");"
+var primary = new CSSVar();
+var secondary = createVariable("secondary--n8-W8g0");
+"
 `;

@@ -1,14 +1,27 @@
-const transformFileSync = require("@babel/core").transformFileSync;
+const transformFileSync = require("@swc/core").transformFileSync;
 const path = require("path");
-const plugin = require("../../babel");
+// const plugin = require("../../swc");
 
 describe("production transform", () => {
     it("CSSVariable", () => {
       const { code } = transformFileSync(
         path.join(__dirname, "../fixtures/CSSVariable.js"),
         {
-          plugins: [[plugin]],
-          babelrc: false,
+          jsc: {
+            experimental: {
+              plugins: [
+                [
+                  require.resolve(
+                    "../../swc/target/wasm32-wasi/debug/swc_plugin_css_variable.wasm"
+                  ),
+                  {
+                    basePath: path.join(__dirname,"../../src/"),
+                    displayName: false,
+                  },
+                ],
+              ],
+            },
+          },
         }
       );
       expect(code).toMatchSnapshot();
@@ -17,8 +30,21 @@ describe("production transform", () => {
       const { code } = transformFileSync(
         path.join(__dirname, "../fixtures/createVar.js"),
         {
-          plugins: [[plugin]],
-          babelrc: false,
+          jsc: {
+            experimental: {
+              plugins: [
+                [
+                  require.resolve(
+                    "../../swc/target/wasm32-wasi/debug/swc_plugin_css_variable.wasm"
+                  ),
+                  {
+                    basePath: path.join(__dirname,"../../src/"),
+                    displayName: false,
+                  },
+                ],
+              ],
+            },
+          },
         }
       );
       expect(code).toMatchSnapshot();
@@ -27,8 +53,21 @@ describe("production transform", () => {
       const { code } = transformFileSync(
         path.join(__dirname, "../fixtures/renamed.js"),
         {
-          plugins: [[plugin]],
-          babelrc: false,
+          jsc: {
+            experimental: {
+              plugins: [
+                [
+                  require.resolve(
+                    "../../swc/target/wasm32-wasi/debug/swc_plugin_css_variable.wasm"
+                  ),
+                  {
+                    basePath: path.join(__dirname,"../../src/"),
+                    displayName: false,
+                  },
+                ],
+              ],
+            },
+          },
         }
       );
       expect(code).toMatchSnapshot();
@@ -40,9 +79,22 @@ describe("production transform", () => {
       const { code } = transformFileSync(
         path.join(__dirname, "../fixtures/CSSVariable.js"),
         {
-          plugins: [[plugin]],
-          babelrc: false,
-          envName: "development"
+          envName: "development",
+          jsc: {
+            experimental: {
+              plugins: [
+                [
+                  require.resolve(
+                    "../../swc/target/wasm32-wasi/debug/swc_plugin_css_variable.wasm"
+                  ),
+                  {
+                    basePath: path.join(__dirname,"../../src/"),
+                    displayName: false,
+                  },
+                ],
+              ],
+            },
+          },
         }
       );
       expect(code).toMatchSnapshot();
@@ -51,9 +103,22 @@ describe("production transform", () => {
       const { code } = transformFileSync(
         path.join(__dirname, "../fixtures/createVar.js"),
         {
-          plugins: [[plugin]],
-          babelrc: false,
-          envName: "development"
+          envName: "development",
+          jsc: {
+            experimental: {
+              plugins: [
+                [
+                  require.resolve(
+                    "../../swc/target/wasm32-wasi/debug/swc_plugin_css_variable.wasm"
+                  ),
+                  {
+                    basePath: path.join(__dirname,"../../src/"),
+                    displayName: false,
+                  },
+                ],
+              ],
+            },
+          },
         }
       );
       expect(code).toMatchSnapshot();
@@ -62,9 +127,22 @@ describe("production transform", () => {
       const { code } = transformFileSync(
         path.join(__dirname, "../fixtures/renamed.js"),
         {
-          plugins: [[plugin]],
-          babelrc: false,
-          envName: "development"
+          envName: "development",
+          jsc: {
+            experimental: {
+              plugins: [
+                [
+                  require.resolve(
+                    "../../swc/target/wasm32-wasi/debug/swc_plugin_css_variable.wasm"
+                  ),
+                  {
+                    basePath: path.join(__dirname,"../../src/"),
+                    displayName: false,
+                  },
+                ],
+              ],
+            },
+          },
         }
       );
       expect(code).toMatchSnapshot();
@@ -76,8 +154,21 @@ describe("production transform", () => {
       const { code } = transformFileSync(
         path.join(__dirname, "../fixtures/CSSVariable.js"),
         {
-          plugins: [[plugin, { displayName: true }]],
-          babelrc: false,
+          jsc: {
+            experimental: {
+              plugins: [
+                [
+                  require.resolve(
+                    "../../swc/target/wasm32-wasi/debug/swc_plugin_css_variable.wasm"
+                  ),
+                  {
+                    basePath: path.join(__dirname,"../../src/"),
+                    displayName: true,
+                  },
+                ],
+              ],
+            },
+          },
         }
       );
       expect(code).toMatchSnapshot();
@@ -86,8 +177,21 @@ describe("production transform", () => {
       const { code } = transformFileSync(
         path.join(__dirname, "../fixtures/createVar.js"),
         {
-          plugins: [[plugin, { displayName: true }]],
-          babelrc: false,
+          jsc: {
+            experimental: {
+              plugins: [
+                [
+                  require.resolve(
+                    "../../swc/target/wasm32-wasi/debug/swc_plugin_css_variable.wasm"
+                  ),
+                  {
+                    basePath: path.join(__dirname,"../../src/"),
+                    displayName: true,
+                  },
+                ],
+              ],
+            },
+          },
         }
       );
       expect(code).toMatchSnapshot();
@@ -96,8 +200,21 @@ describe("production transform", () => {
       const { code } = transformFileSync(
         path.join(__dirname, "../fixtures/renamed.js"),
         {
-          plugins: [[plugin, { displayName: true }]],
-          babelrc: false,
+          jsc: {
+            experimental: {
+              plugins: [
+                [
+                  require.resolve(
+                    "../../swc/target/wasm32-wasi/debug/swc_plugin_css_variable.wasm"
+                  ),
+                  {
+                    basePath: path.join(__dirname,"../../src/"),
+                    displayName: true,
+                  },
+                ],
+              ],
+            },
+          },
         }
       );
       expect(code).toMatchSnapshot();
